@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+
+
+        <ng-container *ngFor="let page of globalService.pages">
+            <ng-container *ngIf="page.id === 3">
+                <div class="col s12 m6 about_text_cont">
+                    <div class="about_text" [innerHTML]="page.body | safeHtml">
+
+                    </div>
+                    
+                </div>
+
+                <div class="col s12 m6 about_img_cont">
+                    <img class="about_img" src="{{globalService.server_url}}{{globalService.server_media_url}}{{page.image}}">
+                    <div class="soc_networks_cont">
+                        <ng-container *ngFor="let soc_network of globalService.soc_networks">
+                            <ng-container *ngIf="soc_network.active === 1">
+                                <div class="soc_network">
+                                    <a target="_blanc" href="{{soc_network.link}}">
+                                        <img src="{{globalService.server_url}}{{globalService.server_media_url}}{{soc_network.image}}">
+                                    </a>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

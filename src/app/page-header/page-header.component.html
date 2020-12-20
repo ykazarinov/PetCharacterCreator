@@ -1,0 +1,48 @@
+<!---->
+<div *ngIf="globalService.headerisVisible === true" class="pcc">
+
+    <nav>
+      <div class="nav-wrapper">
+    <!--    <a href="#!">Logo</a>-->
+        <h1 class="brand-logo">Page name</h1>
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
+
+      </div>
+    </nav>
+
+
+  <ul id="slide-out" class="sidenav">
+    <ng-container  *ngFor="let menu_item of globalService.menu_items">
+      <li routerLinkActive="active" *ngIf="menu_item.parent_id === null" [ngClass]="{'no-padding': menu_item.url === ''}" class="menu_item first_level">
+        <a *ngIf="menu_item.url != ''" routerLink="{{menu_item.url}}" >
+          {{menu_item.title}}
+          <i class="material-icons">{{menu_item.icon_class}}</i>
+        </a>
+          <ul *ngIf="menu_item.url === ''" class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header" tabindex="0">
+                {{menu_item.title}}
+                <i class="material-icons">{{menu_item.icon_class}}</i>
+              </a>
+              <div class="collapsible-body" style = "">
+                <ul>
+                  <ng-container *ngFor="let menu_item_second of globalService.menu_items">
+                    <li  routerLinkActive="active" *ngIf="menu_item_second.parent_id != null"  class="menu_item second_level">
+                      <ng-container *ngIf="menu_item.id === menu_item_second.parent_id">
+                        <a routerLink="{{menu_item_second.url}}">
+                          {{menu_item_second.title}}
+                          <i class="material-icons">{{menu_item_second.icon_class}}</i> 
+                        </a>
+                      </ng-container>
+                    </li>
+                  </ng-container>
+                </ul>
+              </div>
+            </li>
+          </ul>
+      </li>
+    </ng-container>
+
+  </ul>
+  </div>
+

@@ -1,0 +1,131 @@
+// All types of screen
+
+$white: #fff;
+
+.about_text_cont{
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 100;
+
+    &:after {
+        content: ' '; 
+        position: absolute; 
+        width: 0; 
+        height: 0; 
+        z-index: 40;
+
+    }
+    &:before{
+        content: " ";
+        position: absolute;
+        width: 0;
+        height: 0;
+       
+        border: 8px solid;
+        filter: blur(5px);
+        border-color: rgba(0, 0, 0, .5) transparent transparent rgba(0, 0, 0, .5);
+        z-index: -10;
+    }
+
+}
+
+.about_img_cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .about_img{
+        object-fit: cover;
+
+    }
+
+    .soc_networks_cont{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        .soc_network{
+            img{
+                width: 5rem;
+                object-fit: cover;
+            }
+
+        }
+    }
+
+}
+
+
+//------------
+
+@media screen and (orientation: landscape){
+
+    .about_text_cont{
+            max-height: calc(100vh - 80px);
+
+        &:after {
+            right: -20px; 
+            top: 20px; 
+            border: 10px solid; 
+            border-color: $white transparent transparent $white; 
+        }
+        &:before{
+          
+            right: -25px;
+            top: 20px;
+         
+        }
+        .about_text{
+        overflow-y: scroll;
+        overflow-x: unset;
+        max-height: calc(100vh - 100px);
+        
+        }
+    }
+
+    .about_img_cont{
+        height: calc(100vh - 80px);
+        .about_img{
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (orientation: portrait){
+    .about_text_cont{
+        max-height: calc(40vh);
+
+        &:after {
+            right: 20px; 
+            bottom: -20px; 
+            border: 10px solid; 
+            border-color: $white transparent transparent $white; 
+        }
+        &:before{
+        
+            right: 20px;
+            bottom: -25px;
+        
+        }
+        .about_text{
+            overflow-y: scroll;
+            overflow-x: unset;
+            max-height: calc(40vh - 20px);
+        
+        }
+    }
+
+    .about_img_cont{
+        height: 45vh;
+        margin-top: 2vh;
+        .about_img{
+            height: 35vh;
+        }
+    }
+}
+
+

@@ -1,0 +1,13 @@
+<div id="genders">
+  <div class="container-fluid genders_page">
+    <div class="row genders_cont">
+
+        <div *ngFor="let gender of globalService.genders" class="gender_cont col s5 m5">
+          <a  (click)="transferGenderId(gender.id)" routerLink="/constructor">
+            <img src="{{gender.gender_image}}"> 
+          </a>
+        </div>
+
+    </div>
+  </div>
+</div>

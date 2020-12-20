@@ -1,0 +1,28 @@
+<!--*ngIf="globalService.startPageisVisible"-->
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="flex app_title_cont">
+        <div class="app_title">
+          <div class="title_1">{{globalService.app_title_1}}</div>
+          <div class="title_2">{{globalService.app_title_2}}</div>
+          <div class="title_3">{{globalService.app_title_3}}</div>
+        </div>
+      </div>
+      <div class="flex app_image_cont">
+        <div class="app_image">
+          <img src="/assets/img/begin_img.webp">
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="begin_bot flex">
+        <div class="btn-floating btn-large brown pulse">
+<!--          -->
+          <a routerLink="/animals"></a>
+        </div>
+        <div class="title_3"><a routerLink="/animals">{{globalService.begin_bot_text}}</a></div>
+      </div>
+    </div>
+  </div>
+</div>

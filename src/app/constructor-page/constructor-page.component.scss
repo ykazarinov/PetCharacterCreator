@@ -1,0 +1,155 @@
+$white: #ffffff;
+
+//===============================
+
+
+.animal_allpage{
+  .animal_page{
+    .row{
+      margin-bottom: 0;
+
+    }
+
+    @media screen and (orientation: portrait) {
+      .categ_cont {
+        .tablist-left {
+          overflow-x: auto;
+          overflow-y: unset;
+          justify-content: flex-start;
+          flex-wrap: nowrap;
+          li{
+          }
+        }
+      }
+
+      .parts_groups_cont{
+        display: flex;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        overflow-y: unset;
+        max-height: 7rem;
+        .part_cont{
+         
+          
+          flex-wrap: nowrap;
+        }
+      }
+
+
+
+    }
+
+    @media screen and (orientation: landscape){
+      .categ_cont {
+        .tablist-left {
+          overflow-y: scroll;
+          overflow-x: unset;
+          height: calc(100vh - 50px);
+          // height: 100vh;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+          justify-content: center;
+          li{
+          }
+        }
+      }
+
+      .parts_groups_cont{
+        display: flex;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        overflow-x: unset;
+        max-height: calc(100vh - 50px);
+        .part_cont{
+         
+          
+        }
+      }
+    }
+
+      .categ_cont {
+
+        .tablist-left {
+          margin-top: 0;
+          margin-bottom: 0;
+          box-shadow: none !important;
+          -webkit-box-shadow: none !important;
+          min-width: 100%;
+          min-height: 3.5rem;
+          display: flex;
+
+          a, button{
+            background-image: url(/../assets/img/icon_bg.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0.2rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 3.5rem;
+            width: 3.5rem;
+            border: none;
+            img{
+              max-width: 70%;
+              max-height: 70%;
+              object-fit: contain;
+            }
+          }
+
+
+
+        }
+      }
+
+  }
+}
+
+
+
+
+
+.modal{
+  border-radius: .5rem;
+  height: 100%;
+  max-height: 96%;
+}
+
+@media only screen and (max-width: 992px){
+.modal {
+    width: 95%;
+
+}
+}
+
+.podcat{
+  width: 6rem;
+  height: 6rem;
+  background-image: url(/../assets/img/wood_square_bg.png);
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1000;
+  &.disabled {
+    pointer-events: none;
+    filter: grayscale(1) blur(1px);
+  }
+ 
+    img{
+      object-fit: cover;
+      width: 80%;
+      height: auto;
+    }
+ 
+}

@@ -1,0 +1,60 @@
+// .mat-dialog-container{
+//     padding: unset;
+    .color_dialog_header{
+        position: relative;
+        background-image: url(/assets/img/header_bg.png);
+        background-repeat: repeat-x;
+        background-size: cover;
+        background-position: bottom;
+        background-color: unset;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: .7rem;
+        padding-top: 0;
+        display: flex;
+        justify-content: space-between;
+        h1{
+            font-family: "Ranchers", cursive;
+            font-size: 1.7rem !important;
+            color: #000000;
+            opacity: 0.5;
+            position: unset;
+            margin: unset;
+            left: unset;
+            transform: unset;
+            padding-left: 1rem;
+        }
+        .close_btn{
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+            background-color: #000000;
+            opacity: 0.5;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+    .color_dialog_content{
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+            .one_tab{
+                width: 100%;
+                height: 100%;
+                // transition: width 2s;
+            }
+        
+        
+    }
+// }
+
+.mat-dialog-content{
+    max-height: unset;
+    margin: unset;
+}
+
+
+
+
+

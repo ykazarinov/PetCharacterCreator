@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import {Component, Output} from '@angular/core';
+import {GlobalSeviceService} from './services/global-sevice.service';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'application';
+
+  constructor(public globalService: GlobalSeviceService) {
+  }
+
+
+
+
 }
