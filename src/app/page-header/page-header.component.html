@@ -29,7 +29,7 @@
                   <ng-container *ngFor="let menu_item_second of globalService.menu_items">
                     <li  routerLinkActive="active" *ngIf="menu_item_second.parent_id != null"  class="menu_item second_level">
                       <ng-container *ngIf="menu_item.id === menu_item_second.parent_id">
-                        <a routerLink="{{menu_item_second.url}}">
+                        <a routerLink="{{menu_item_second.url}}"> 
                           {{menu_item_second.title}}
                           <i class="material-icons">{{menu_item_second.icon_class}}</i> 
                         </a>
