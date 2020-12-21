@@ -28,7 +28,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { AboutComponent } from './about/about.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { AboutComponent } from './about/about.component';
     LuminosityComponent,
     ColorComponent,
     HueComponent,
-    AboutComponent
+    PageComponent
   ],
   imports: [
     BrowserModule,

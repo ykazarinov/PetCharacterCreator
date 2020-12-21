@@ -2,8 +2,8 @@
     <div class="row">
 
 
-        <ng-container *ngFor="let page of globalService.pages">
-            <ng-container *ngIf="page.id === 3">
+        <!-- <ng-container *ngFor="let page of globalService.pages">
+            <ng-container *ngIf="page.id === 3"> -->
                 <div class="col s12 m6 about_text_cont">
                     <div class="about_text" [innerHTML]="page.body | safeHtml">
 
@@ -25,7 +25,7 @@
                         </ng-container>
                     </div>
                 </div>
-            </ng-container>
-        </ng-container>
+            <!-- </ng-container>
+        </ng-container> -->
     </div>
 </div>
