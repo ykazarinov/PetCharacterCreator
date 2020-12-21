@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GlobalSeviceService} from '../services/global-sevice.service';
-import {ActivatedRoute, Params} from '@angular/router';
+// import {ActivatedRoute, Params} from '@angular/router';
 
 
 @Component({
@@ -12,13 +12,12 @@ export class PageHeaderComponent implements OnInit {
 
 
 
-  constructor(public globalService: GlobalSeviceService,
-              private route: ActivatedRoute ) { }
+  constructor(public globalService: GlobalSeviceService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      // console.log(params);
-    });
+    // this.route.params.subscribe((params: Params) => {
+    //   console.log(params);
+    // });
   }
 
 }

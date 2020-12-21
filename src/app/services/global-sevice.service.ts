@@ -210,7 +210,7 @@ export class GlobalSeviceService {
 
   // по полученному url находим среди страниц нужную
   getByUrl(url: string){
-    return this.pages.find(p => p.slug === url)
+     return this.pages.find(p => p.slug === url)
   }
 
 

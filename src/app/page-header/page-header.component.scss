@@ -31,12 +31,11 @@ $black: #000000;
       display: flex;
 
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       height: 3rem;
 
       h1{
-        color: $black;
-        opacity: 0.5;
+       
         position: unset;
         margin: unset;
         left: unset;

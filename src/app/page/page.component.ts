@@ -17,7 +17,9 @@ export class PageComponent implements OnInit {
 
   ngOnInit(): void { 
     this.route.params.subscribe((params: Params) => {
-      this.page = this.globalService.getByUrl(params.url);
+      console.log(params);
+       this.page = this.globalService.getByUrl(params.url);
+      console.log(this.page);
     })
   }
 

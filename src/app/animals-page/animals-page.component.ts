@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Animal, GlobalSeviceService} from '../services/global-sevice.service';
+import { Component, Input, OnInit } from '@angular/core';
+import {Animal, GlobalSeviceService, Page} from '../services/global-sevice.service';
 import {HttpClient} from '@angular/common/http';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Params, Router } from '@angular/router';
 
 
 
@@ -11,12 +12,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class AnimalsPageComponent implements OnInit {
 
-  loading = false;
-  all: any;
+  @Input() loading: boolean;
+  page_url: string;
+  page: Page;
 
   constructor(private http: HttpClient,
-              public globalService: GlobalSeviceService) {
+              public globalService: GlobalSeviceService,
+              private route: ActivatedRoute,
+              private router: Router) {
     globalService.headerisVisible = true;
+
   }
 
   ngOnInit(){
@@ -26,28 +31,14 @@ export class AnimalsPageComponent implements OnInit {
     this.globalService.myAnimal.gender_id = 0;
     this.globalService.myAnimal.my_parts = [];
 
-    this.loading = true;
-    this.http.get<Animal[]>(this.globalService.server_url + 'animals')
-      .subscribe(response => {
+    // забираем название страницы
+    this.page_url =  this.router.url.slice(1);
+    this.page = this.globalService.getByUrl(this.page_url);   
 
-        this.all = response;
-        // this.animals = this.all.animals_genders['animals'];
-
-        this.globalService.animals = this.all.animals_genders['animals'];
-        this.globalService.genders = this.all.animals_genders['genders'];
-        this.globalService.menu_items = this.all.animals_genders['menu'];
-        this.globalService.pages = this.all.animals_genders['pages'];
-        this.globalService.soc_networks = this.all.animals_genders['soc_networks'];
-        console.log(this.all.animals_genders);
-        // console.log(this.globalService.menu_items);
-        this.loading = false;
-      })
   }
 
   transferAnimalId(a){
     this.globalService.myAnimal.animal_id = a;
-
-
   }
 
 }
