@@ -1,9 +1,4 @@
-<h1 class="brand-logo">
-  {{globalService.app_title_1 | titlecase}}
-  {{globalService.app_title_2 | titlecase}}
-  {{globalService.app_title_3 | titlecase}}: 
-  {{page.title | titlecase}}
-</h1>
+<app-heder-title></app-heder-title>
 
 <div *ngIf="loading" id="loadingDiv">
   <img src="assets/img/loader.gif">

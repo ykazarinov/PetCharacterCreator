@@ -14,7 +14,8 @@
   <ul id="slide-out" class="sidenav">
     <ng-container  *ngFor="let menu_item of globalService.menu_items">
       <li routerLinkActive="active" *ngIf="menu_item.parent_id === null" [ngClass]="{'no-padding': menu_item.url === ''}" class="menu_item first_level">
-        <a *ngIf="menu_item.url != ''" [routerLink]="[menu_item.url]" >
+        <a *ngIf="menu_item.url != ''"  routerLink="/{{menu_item.url}}">
+          <!-- menu_item.url -->
           {{menu_item.title}}
           <i class="material-icons">{{menu_item.icon_class}}</i>
         </a>

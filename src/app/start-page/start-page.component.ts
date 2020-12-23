@@ -32,7 +32,7 @@ export class StartPageComponent implements OnInit {
         this.globalService.menu_items = this.all.animals_genders['menu'];
         this.globalService.pages = this.all.animals_genders['pages'];
         this.globalService.soc_networks = this.all.animals_genders['soc_networks'];
-        console.log(this.all.animals_genders);
+        console.log('rrr', this.all.animals_genders);
         this.loading = false;
     })
   }

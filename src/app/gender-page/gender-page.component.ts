@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Category, GlobalSeviceService} from '../services/global-sevice.service';
-// import {HttpClient} from '@angular/common/http';
+import {GlobalSeviceService, Page} from '../services/global-sevice.service';
+
 
 @Component({
   selector: 'app-gender-page',
@@ -10,7 +10,8 @@ import {Category, GlobalSeviceService} from '../services/global-sevice.service';
 export class GenderPageComponent implements OnInit {
 
 
-  
+  page_url: string;
+  page: Page;
   
 
   constructor(
