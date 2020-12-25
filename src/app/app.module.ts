@@ -30,6 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { PageComponent } from './page/page.component';
 import { HederTitleComponent } from './heder-title/heder-title.component';
+import { LangWinComponent } from './lang-win/lang-win.component';
+import { LanguageComponent } from './language/language.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { HederTitleComponent } from './heder-title/heder-title.component';
     ColorComponent,
     HueComponent,
     PageComponent,
-    HederTitleComponent
+    HederTitleComponent,
+    LangWinComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,

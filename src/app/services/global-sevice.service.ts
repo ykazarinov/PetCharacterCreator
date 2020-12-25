@@ -120,6 +120,14 @@ export interface SocNetwork{
 }
 
 
+export interface Language{
+  id: number
+  title: string
+  local: string
+  active: boolean
+  current?: boolean
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -134,6 +142,8 @@ export class GlobalSeviceService {
   app_title_2: string = 'character';
   app_title_3: string = 'creator';
   begin_bot_text: string = 'play now!';
+
+  languages: Language[] = [];
 
 
   animals: Animal[] = [];

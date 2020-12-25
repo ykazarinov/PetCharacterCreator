@@ -78,7 +78,7 @@ $default_grey_act: #cccccc;
         align-items: center;
         position: relative;
         overflow: hidden;
-        z-index: 1000;
+        z-index: 100;
         a{
           display: flex;
           justify-content: center;
@@ -277,7 +277,7 @@ $default_grey_act: #cccccc;
 }
 
 .sidenav{
-  z-index: 9999;
+  // z-index: 9999;
 }
 
 body{
@@ -422,5 +422,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .ng-star-inserted{
   display: block;
+}
+
+.mat-dialog-container{
+  position: relative;
+  z-index: 99999;
 }
 

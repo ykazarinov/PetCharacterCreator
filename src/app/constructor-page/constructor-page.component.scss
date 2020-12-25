@@ -140,7 +140,7 @@ $white: #ffffff;
   align-items: center;
   position: relative;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 100;
   &.disabled {
     pointer-events: none;
     filter: grayscale(1) blur(1px);

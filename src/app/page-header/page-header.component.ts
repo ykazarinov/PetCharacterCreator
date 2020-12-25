@@ -1,4 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LangWinComponent } from '../lang-win/lang-win.component';
 import {GlobalSeviceService} from '../services/global-sevice.service';
 // import {ActivatedRoute, Params} from '@angular/router';
 
@@ -10,9 +12,10 @@ import {GlobalSeviceService} from '../services/global-sevice.service';
 })
 export class PageHeaderComponent implements OnInit {
 
+  
 
-
-  constructor(public globalService: GlobalSeviceService) { }
+  constructor(public globalService: GlobalSeviceService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     // this.route.params.subscribe((params: Params) => {
@@ -20,6 +23,13 @@ export class PageHeaderComponent implements OnInit {
     // });
 
 
+  }
+
+  openLangDialog() {
+    const dialogRef = this.dialog.open(LangWinComponent,{
+      height: 'calc(100% - 3rem)',
+      width: 'calc(100% - 3rem)',
+    });
   }
 
 }
