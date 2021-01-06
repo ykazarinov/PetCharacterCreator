@@ -429,3 +429,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   z-index: 99999;
 }
 
+.mat-dialog-container{
+  background-image: url("/assets/img/wood_bg.png");
+    background-repeat: repeat;
+}
+
+button:focus{
+  background-color: transparent !important;
+}

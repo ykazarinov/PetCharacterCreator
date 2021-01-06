@@ -123,9 +123,17 @@ export interface SocNetwork{
 export interface Language{
   id: number
   title: string
-  local: string
+  locale: string
   active: boolean
   current?: boolean
+  menu_items?: Menu[]
+  pages?: Page[]
+  wins?: Win[]
+}
+
+export interface Win{
+  id: number
+  title: string
 }
 
 
@@ -144,6 +152,7 @@ export class GlobalSeviceService {
   begin_bot_text: string = 'play now!';
 
   languages: Language[] = [];
+  
 
 
   animals: Animal[] = [];
@@ -151,8 +160,12 @@ export class GlobalSeviceService {
 
   myAnimal: MyAnimal = {animal_id: 0, gender_id: 0, my_parts:[] = []};
 
+  // переменные хранящие данные для перевода на разные языки
   menu_items: Menu[] = [];
   pages: Page[] = [];
+  wins: Win[] = [];
+  //===========
+
   soc_networks: SocNetwork[] = [];
 
   categories: Category[] = [];
@@ -170,6 +183,7 @@ export class GlobalSeviceService {
 
   constructor_resp: any;
   
+  
   choose_color_type: number;
   // 1 = body
   // 2 = main color of another part
@@ -178,6 +192,9 @@ export class GlobalSeviceService {
   categ_id_for_color: number; // id категории цвета 
   main_color_btn_active: boolean = false; // проверка активности кнопки выбора основного цвета для второстепенных деталей
   spec_color_btn_active: boolean = false; // проверка активности кнопки выбора спец цвета для второстепенных деталей
+
+
+  lang_standart: any;
 
   constructor(public http: HttpClient) {
     
@@ -220,10 +237,23 @@ export class GlobalSeviceService {
 
   // по полученному url находим среди страниц нужную
   getByUrl(url: string){
-     return this.pages.find(p => p.slug === url)
+    for(let i in this.languages){
+      if(this.languages[i].current === true){
+        // if(this.languages[i].locale === 'en'){
+          return this.languages[i].pages.find(p => p.slug === url);
+        // }
+      }
+     
+    }
+     
   }
 
-
+  getTranslate(locale): Observable<Language>{
+    
+      return this.http.get<Language>(this.server_url + 'get_lang?locale=' + locale);
+    
+   
+  }
 
 
 }

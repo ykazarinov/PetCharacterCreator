@@ -36,9 +36,11 @@
 .languages_dialog_content{
     padding-left: 1rem;
     padding-right: 1rem;
-
-       
+    display: flex;
     
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
     
 }
 

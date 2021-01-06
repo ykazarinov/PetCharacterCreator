@@ -27,8 +27,8 @@ export class PageHeaderComponent implements OnInit {
 
   openLangDialog() {
     const dialogRef = this.dialog.open(LangWinComponent,{
-      height: 'calc(100% - 3rem)',
-      width: 'calc(100% - 3rem)',
+      // height: 'calc(100% - 3rem)',
+      // width: 'calc(50% - 3rem)',
     });
   }
 

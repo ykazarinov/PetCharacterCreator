@@ -29,11 +29,31 @@ export class StartPageComponent implements OnInit {
         this.all = response;
         this.globalService.animals = this.all.animals_genders['animals'];
         this.globalService.genders = this.all.animals_genders['genders'];
-        this.globalService.menu_items = this.all.animals_genders['menu'];
-        this.globalService.pages = this.all.animals_genders['pages'];
+       
+
+
         this.globalService.soc_networks = this.all.animals_genders['soc_networks'];
         this.globalService.languages = this.all.animals_genders['languages'];
-        console.log('rrr', this.all.animals_genders);
+
+        // эти переменные потом будут переводиться на разные языки
+        // this.globalService.menu_items = this.all.animals_genders['menu'];
+        // this.globalService.pages = this.all.animals_genders['pages'];
+        //  this.globalService.wins = this.all.animals_genders['wins'];
+        //====================
+        // console.log(this.globalService.languages);
+        for(let i in this.globalService.languages){
+          if(this.globalService.languages[i].locale === 'en'){
+            this.globalService.languages[i].current = true;
+            this.globalService.languages[i].menu_items = this.all.animals_genders['menu'];
+            this.globalService.languages[i].pages = this.all.animals_genders['pages'];
+            this.globalService.languages[i].wins = this.all.animals_genders['wins'];
+          }
+        }
+        console.log('lang при первой загрузке',this.globalService.languages);
+        // this.globalService.pages = this.all.animals_genders['pages'];
+        // this.globalService.wins = this.all.animals_genders['wins'];
+        
+        
         this.loading = false;
     })
   }
