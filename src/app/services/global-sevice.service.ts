@@ -238,15 +238,29 @@ export class GlobalSeviceService {
   // по полученному url находим среди страниц нужную
   getByUrl(url: string){
     for(let i in this.languages){
-      if(this.languages[i].current === true){
-        // if(this.languages[i].locale === 'en'){
+      console.log(this.languages);
+       if(this.languages[i].current === true){
+          
           return this.languages[i].pages.find(p => p.slug === url);
-        // }
-      }
+       
+       }
      
     }
      
   }
+
+  // this.http.get('https://myjson.com/qbot1')
+  // .subscribe((res:any) => {
+  //     this.Results = res;
+  //     if (data.listitem) {
+  //         this.selectedElementSymbols = this.Results.find(e => e.name === this.data.listitem.name).symbols;
+  //     }
+  // });
+
+
+
+
+
 
   getTranslate(locale): Observable<Language>{
     

@@ -19,10 +19,15 @@ export class HederTitleComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+        
+
+  }
+
+  ngDoCheck(){
         // забираем название страницы
         this.page_url =  this.router.url.slice(1);
         this.page = this.globalService.getByUrl(this.page_url); 
-
   }
 
 }

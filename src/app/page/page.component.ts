@@ -15,10 +15,21 @@ export class PageComponent implements OnInit {
     public globalService: GlobalSeviceService,
     private route: ActivatedRoute) { }
 
-  ngOnInit(): void { 
-    this.route.params.subscribe((params: Params) => {
-    this.page = this.globalService.getByUrl(params.url);
+  ngOnInit(){ 
+     
+  }
+
+  ngDoCheck(){
+     this.route.params.subscribe((params: Params) => {
+        this.page = this.globalService.getByUrl(params.url); 
+        
     })
   }
+
+  ngAfterViewChecked(){
+    
+  }
+
+
 
 }

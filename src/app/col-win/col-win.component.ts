@@ -9,12 +9,18 @@ import { colorHue, colorsLuminositie, GlobalSeviceService } from '../services/gl
 })
 export class ColWinComponent implements OnInit {
 
-  constructor(public globalService: GlobalSeviceService) {
+  constructor(public globalService: GlobalSeviceService) { 
 
    
   }
+  public current_lang: any;
 
   ngOnInit(): void { 
+    for(let i in this.globalService.languages){
+      if(this.globalService.languages[i].current === true){
+        this.current_lang = this.globalService.languages[i];
+      }
+    }
   }
 
   ngAfterViewInit() {    

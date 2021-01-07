@@ -22,7 +22,7 @@ export class PartsCategoryComponent implements OnInit {
           j++;
       }
     }
-    // console.log(globalService.non_changeable_parts_svg);
+   
 
   }
 

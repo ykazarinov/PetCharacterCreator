@@ -18,9 +18,7 @@ export class PageHeaderComponent implements OnInit {
     public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    // this.route.params.subscribe((params: Params) => {
-    //   console.log(params);
-    // });
+
 
 
   }

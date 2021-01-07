@@ -17,6 +17,13 @@
       });
     })
 
+    $(document).on("click", ".lang_bot", function(e) {
+      e.preventDefault();
+      var elem = $('.sidenav');
+      var instance = M.Sidenav.getInstance(elem);
+      instance.close();
+    })
+
 
   });
 

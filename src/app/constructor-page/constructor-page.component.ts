@@ -47,7 +47,9 @@ export class ConstructorPageComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    this.globalService.verifActivePart();
+    setTimeout(() => {
+      this.globalService.verifActivePart();
+    });
   }
 
 
@@ -59,15 +61,10 @@ export class ConstructorPageComponent implements OnInit {
       width: 'calc(100% - 3rem)',
     });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+  
   }
 
-  // bodyColorClick(){
-  //   this.colorWinHide = false;
-  //   // console.log(this.globalService.color_icons);
-  // }
+  
 
   transferConstructorData(anim_id, gender_id){
     this.loading = true;
@@ -87,10 +84,6 @@ export class ConstructorPageComponent implements OnInit {
         this.globalService.colors_luminosity = this.globalService.constructor_resp.constructor_page['colors_luminosities'];
         this.globalService.colors = this.globalService.constructor_resp.constructor_page['colors'];
 
-        // this.globalService.myAnimal.bg_color = 
-
-
-        // console.log('constr ', this.globalService.colors_luminosity);
 
         let j;
         let i = 0;

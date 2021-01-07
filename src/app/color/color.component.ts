@@ -21,7 +21,7 @@ export class ColorComponent implements OnInit {
       for(let i in this.globalService.myAnimal.my_parts){ 
         if(this.globalService.myAnimal.my_parts[i].have_body_color === 1){
           this.globalService.myAnimal.my_parts[i].bg_color_default = this.color.rgb_color;
-          // console.log(this.globalService.myAnimal.my_parts[i].bg_color_default);
+         
         }
        }
        // для всех деталей в наборе
@@ -45,10 +45,7 @@ export class ColorComponent implements OnInit {
       }
       
       for(let j in this.globalService.parts){
-        // console.log(this.globalService.parts[j].categ_id);
-        // console.log(this.globalService.categ_id_for_color);
-        // console.log('--------------------');
-        if(this.globalService.parts[j].categ_id === this.globalService.categ_id_for_color){
+          if(this.globalService.parts[j].categ_id === this.globalService.categ_id_for_color){
           
           if(this.globalService.parts[j].have_body_color === 0 || 
             this.globalService.parts[j].have_body_color === null){

@@ -35,12 +35,9 @@ export class StartPageComponent implements OnInit {
         this.globalService.soc_networks = this.all.animals_genders['soc_networks'];
         this.globalService.languages = this.all.animals_genders['languages'];
 
-        // эти переменные потом будут переводиться на разные языки
-        // this.globalService.menu_items = this.all.animals_genders['menu'];
-        // this.globalService.pages = this.all.animals_genders['pages'];
-        //  this.globalService.wins = this.all.animals_genders['wins'];
+       
         //====================
-        // console.log(this.globalService.languages);
+       
         for(let i in this.globalService.languages){
           if(this.globalService.languages[i].locale === 'en'){
             this.globalService.languages[i].current = true;
@@ -49,11 +46,8 @@ export class StartPageComponent implements OnInit {
             this.globalService.languages[i].wins = this.all.animals_genders['wins'];
           }
         }
-        console.log('lang при первой загрузке',this.globalService.languages);
-        // this.globalService.pages = this.all.animals_genders['pages'];
-        // this.globalService.wins = this.all.animals_genders['wins'];
-        
-        
+             
+        console.log(this.globalService.languages);
         this.loading = false;
     })
   }
