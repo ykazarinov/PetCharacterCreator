@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Observable, Subscription } from 'rxjs';
 import { GlobalSeviceService, Page } from '../services/global-sevice.service';
 
 @Component({
@@ -10,24 +11,46 @@ import { GlobalSeviceService, Page } from '../services/global-sevice.service';
 export class HederTitleComponent implements OnInit {
 
   page: Page;
+
   page_url: string;
+
 
   constructor( 
     public globalService: GlobalSeviceService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router
+    ) { 
 
-  ngOnInit(): void {
+
+  
+    
+     
+
+    }
 
 
-        
+
+  ngOnInit(){
+
 
   }
 
   ngDoCheck(){
-        // забираем название страницы
-        this.page_url =  this.router.url.slice(1);
-        this.page = this.globalService.getByUrl(this.page_url); 
+    
+    this.page_url =  this.router.url.slice(1);
+  this.page = this.globalService.getByUrl(this.page_url);
+    
+       
+  }
+
+  ngAfterViewChecked(){
+  
+  }
+
+  ngAfterViewInit(){
+  
+  
+                 
   }
 
 }

@@ -39,15 +39,19 @@ export class StartPageComponent implements OnInit {
         //====================
        
         for(let i in this.globalService.languages){
-          if(this.globalService.languages[i].locale === 'en'){
+          if(this.globalService.languages[i].locale === 'en'){ 
             this.globalService.languages[i].current = true;
             this.globalService.languages[i].menu_items = this.all.animals_genders['menu'];
             this.globalService.languages[i].pages = this.all.animals_genders['pages'];
             this.globalService.languages[i].wins = this.all.animals_genders['wins'];
+            this.globalService.languages[i].buttons = this.all.animals_genders['buttons'];
+            this.globalService.languages[i].inputs = this.all.animals_genders['inputs'];
           }
         }
-             
+
         console.log(this.globalService.languages);
+             
+       
         this.loading = false;
     })
   }

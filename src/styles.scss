@@ -1,24 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 $bg_color: #FFDFA0;
 $black: #000000;
-
+$grey: #696969;
 
 @font-face {
   font-family: 'Ranchers';
   src: url(/assets/fonts/Ranchers/Ranchers-Regular.ttf) format("truetype");
+  
+}
+
+@font-face {
+  font-family: 'PTSansNarrowBold';
+  src: url(/assets/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'PTSansNarrowRegular';
+  src: url(/assets/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url(/assets/fonts/Pacifico/Pacifico-Regular.ttf) format("truetype");
+  
 }
 
 h1{
-  font-family: 'Ranchers', cursive !important;
-  font-size: 1.7rem !important;
+  font-family: 'PTSansNarrowBold', cursive !important;
+  font-size: 2rem !important;
   color: $black;
   margin-bottom: 0 !important;
+  font-weight: bold;
 
   
 }
 
 h2{
-  font-family: 'Ranchers', cursive !important;
+  font-family: 'PTSansNarrowBold', cursive !important;
   font-size: 1.3rem !important;
   margin-bottom: 0 !important;
 
@@ -210,10 +228,7 @@ $default_grey_act: #cccccc;
         width: 100%;
         height: auto;
         right: 0;
-        // z-index: 0;
-        // clip: rect(0vh, 50vw, 90vh, 0);
-        // max-width: 50vw;
-        // max-height: 100vh;
+
         svg{
           margin-left: -30%;
           margin-top: 3%;
@@ -255,6 +270,79 @@ $default_grey_act: #cccccc;
 
 }
 
+//===================== pet_name page====================
+
+.pet_name{
+  padding: unset !important;
+  margin-top: -1rem;
+  .image{
+    display:flex;
+    // justify-content: flex-end;
+    // flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    width: 100% !important;
+    height: 40vh;
+    position: relative;
+    
+
+
+
+
+
+    @media screen and (orientation: landscape){
+      .svg_cont{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        right: 0;
+        display: flex;
+
+        svg{
+          margin-left: 0;
+          margin-top: 0;
+          height: auto;
+          position: relative;
+          overflow:hidden;
+          width: 40%;
+          height: 40%;
+          justify-content: center;
+          justify-items: center;
+          margin: auto !important;
+
+        }
+      }
+    }
+    @media screen and (orientation: portrait){
+      .svg_cont{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        right: 0;
+        z-index: 0;
+        // clip: rect(0vh, 50vw, 90vh, 0);
+        svg{
+          margin-left: -30%;
+          margin-top: 3%;
+          height: auto;
+          position: relative;
+          overflow:hidden;
+          width: 150%;
+          height: 150%;
+        }
+      }
+    }
+  }
+ 
+
+}
+
+
+
+//====================end of pet_name_page==================
+
 
 
 #loadingDiv{
@@ -278,6 +366,23 @@ $default_grey_act: #cccccc;
 
 .sidenav{
   // z-index: 9999;
+
+  font-family: 'PTSansNarrowRegular', cursive !important;
+  li{
+    a{
+      font-size: 1.5rem !important;
+      i{
+        margin: 0 1.5rem 0 0 !important;
+      }
+    }
+  }
+  
+
+}
+
+.mat-button{
+  font-family: 'PTSansNarrowRegular', cursive !important;
+  font-size: 1.5rem !important;
 }
 
 body{
@@ -437,3 +542,72 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 button:focus{
   background-color: transparent !important;
 }
+
+
+.next_btn{
+  position: absolute;
+  z-index: 10000;
+
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+  right: .5rem;
+  bottom: .5rem;
+  background-image: url('/../assets/img/next2.png');
+
+ 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  width: 6rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'PTSansNarrowBold', cursive !important;
+  font-size: 1.5rem;
+  background-color: transparent !important;
+  border: none !important;
+
+}
+
+input{
+  border: solid 2px $grey;
+  background-color: $white !important;
+  border-radius: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+}
+
+.mat-form-field-appearance-outline
+{
+    .mat-form-field-outline-start{
+    border: none !important;
+    } 
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-outline-gap{
+    border: none !important;
+  }
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-outline-end{
+    border: none !important;
+  }
+}
+
+.mat-form-field-appearance-outline{
+  .mat-form-field-wrapper{
+    margin: 0 !important;
+    padding: 0 !important;
+
+  }
+} 
+
+.mat-form-field-appearance-outline{
+  .mat-form-field-infix{
+    padding: 1em 0 0 0 !important;
+  }
+} 

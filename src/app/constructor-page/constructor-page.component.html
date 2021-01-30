@@ -1,4 +1,6 @@
 <app-heder-title></app-heder-title>
+<a routerLink="{{currentPageButton?.link}}" class="next_btn">{{currentPageButton?.title}}</a> 
+
 <div *ngIf="loading" id="loadingDiv">
   <img src="assets/img/loader.gif">
 </div>

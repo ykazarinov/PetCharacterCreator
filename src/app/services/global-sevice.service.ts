@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 export interface Animal {
@@ -20,6 +21,7 @@ export interface MyAnimal{
   animal_id: number
   gender_id?: number
   my_parts?: Part[]
+  name?: string
 
 
 }
@@ -129,11 +131,31 @@ export interface Language{
   menu_items?: Menu[]
   pages?: Page[]
   wins?: Win[]
+  buttons?: Button[]
+  inputs?: Input[]
 }
 
 export interface Win{
   id: number
   title: string
+}
+
+export interface Button{
+  id: number
+  active: boolean
+  title: string
+  link: string
+  page_url: string
+}
+
+export interface Input{
+  id: number
+  active: boolean
+  form_name: string
+  label: string
+  placeholder: string
+  page_url: string
+  
 }
 
 
@@ -164,6 +186,8 @@ export class GlobalSeviceService {
   menu_items: Menu[] = [];
   pages: Page[] = [];
   wins: Win[] = [];
+  buttons: Button[] = [];
+  inputs: Input[] = [];
   //===========
 
   soc_networks: SocNetwork[] = [];
@@ -196,7 +220,38 @@ export class GlobalSeviceService {
 
   lang_standart: any;
 
-  constructor(public http: HttpClient) {
+  // page_url: string;
+
+
+
+
+
+  // stream$ = new Observable <Page>(observer => {
+  //   this.page_url =  this.router.url.slice(1);
+  //   console.log(this.page_url); 
+  //   for(let i in this.languages){
+  //     if(this.languages[i].current === true){
+       
+  //       setTimeout(() => {
+  //         observer.next(
+  //           this.languages[i].pages.find(p => p.slug === this.page_url)
+  //           ); // happens asynchronously
+  //         observer.complete();
+  //         // subscriber.complete();
+  //         return {unsubscribe() {}}
+  //       }, 0);
+  
+       
+  //     }
+  //   }
+  // });
+
+
+
+
+  constructor(public http: HttpClient,
+    // private router: Router
+    ) {
     
     }
 
@@ -236,30 +291,17 @@ export class GlobalSeviceService {
   }
 
   // по полученному url находим среди страниц нужную
-  getByUrl(url: string){
+ getByUrl(url: string){
+  
     for(let i in this.languages){
-      console.log(this.languages);
        if(this.languages[i].current === true){
-          
           return this.languages[i].pages.find(p => p.slug === url);
        
        }
      
     }
-     
-  }
-
-  // this.http.get('https://myjson.com/qbot1')
-  // .subscribe((res:any) => {
-  //     this.Results = res;
-  //     if (data.listitem) {
-  //         this.selectedElementSymbols = this.Results.find(e => e.name === this.data.listitem.name).symbols;
-  //     }
-  // });
-
-
-
-
+ 
+ }
 
 
   getTranslate(locale): Observable<Language>{

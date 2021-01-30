@@ -9,7 +9,7 @@ import {GlobalSeviceService} from './services/global-sevice.service';
 import { AnimalsPageComponent } from './animals-page/animals-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import { GenderPageComponent } from './gender-page/gender-page.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ConstructorPageComponent } from './constructor-page/constructor-page.component';
 import { PartsCategoryComponent } from './parts-category/parts-category.component';
 import { PartComponent } from './part/part.component';
@@ -28,10 +28,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { PageComponent } from './page/page.component';
 import { HederTitleComponent } from './heder-title/heder-title.component';
 import { LangWinComponent } from './lang-win/lang-win.component';
 import { LanguageComponent } from './language/language.component';
+import { PetNameComponent } from './pet-name/pet-name.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,8 @@ import { LanguageComponent } from './language/language.component';
     PageComponent,
     HederTitleComponent,
     LangWinComponent,
-    LanguageComponent
+    LanguageComponent,
+    PetNameComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,13 @@ import { LanguageComponent } from './language/language.component';
     MatTabsModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+
+    ReactiveFormsModule,
+    FormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

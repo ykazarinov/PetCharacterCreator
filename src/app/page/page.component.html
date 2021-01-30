@@ -6,14 +6,14 @@
         <!-- <ng-container *ngFor="let page of globalService.pages">
             <ng-container *ngIf="page.id === 3"> -->
                 <div class="col s12 m6 about_text_cont">
-                    <div class="about_text" [innerHTML]="page.body | safeHtml">
+                    <div class="about_text" [innerHTML]="page?.body | safeHtml">
 
                     </div>
                     
                 </div>
 
                 <div class="col s12 m6 about_img_cont">
-                    <img class="about_img" src="{{globalService.server_url}}{{globalService.server_media_url}}{{page.image}}">
+                    <img class="about_img" src="{{globalService.server_url}}{{globalService.server_media_url}}{{page?.image}}">
                     <div class="soc_networks_cont">
                         <ng-container *ngFor="let soc_network of globalService.soc_networks">
                             <ng-container *ngIf="soc_network.active === 1">

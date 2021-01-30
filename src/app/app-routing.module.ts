@@ -6,13 +6,16 @@ import {GenderPageComponent} from './gender-page/gender-page.component';
 import {ConstructorPageComponent} from './constructor-page/constructor-page.component';
 import { PageComponent } from './page/page.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { PetNameComponent } from './pet-name/pet-name.component';
 
 const routes: Routes = [
     {path: '', component: StartPageComponent},
     {path: 'animals', component: AnimalsPageComponent},
     {path: 'genders', component: GenderPageComponent},
     {path: 'constructor', component: ConstructorPageComponent},
+    {path: 'name', component: PetNameComponent},
     {path: ':url', component: PageComponent}
+    
     // {path: 'termsofuse', component: PageComponent}
 ];
 

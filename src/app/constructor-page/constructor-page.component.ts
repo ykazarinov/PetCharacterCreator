@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild} from
 import {GlobalSeviceService} from '../services/global-sevice.service';
 import {MatDialog} from '@angular/material/dialog';
 import { ColWinComponent } from '../col-win/col-win.component';
+import { Router } from '@angular/router';
 
 /**
  * @title Dialog with header, scrollable content and actions
@@ -28,13 +29,37 @@ export class ConstructorPageComponent implements OnInit {
   constructor(
     public globalService: GlobalSeviceService, 
     public dialog: MatDialog,
-    private cd: ChangeDetectorRef) {
+    private cd: ChangeDetectorRef,
+    private router: Router) {
    }
+
+   public current_lang: any;
+   public page_url: any;
+   public currentPageButton: any;
 
   ngOnInit(): void {
     
     this.transferConstructorData(this.globalService.myAnimal.animal_id, this.globalService.myAnimal.gender_id);
 
+  }
+
+  ngDoCheck(){
+    this.page_url =  this.router.url.slice(1);
+
+    for(let i in this.globalService.languages){
+      if(this.globalService.languages[i].current === true){
+        this.current_lang = this.globalService.languages[i];
+        
+        for(let j in this.current_lang.buttons){
+          if(this.current_lang.buttons[j].page_url === this.page_url){
+            this.currentPageButton = this.current_lang.buttons[j];
+          }
+        }
+
+
+
+      }
+    }
   }
 
   ngAfterViewInit() {
