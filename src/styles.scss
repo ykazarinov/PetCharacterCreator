@@ -676,6 +676,8 @@ input{
 
 }
 
+
+
 .categ_cont{
   display: flex;
 }
@@ -711,5 +713,19 @@ input{
     background-size: cover;
     background-position: bottom;
   }
+}
+
+.mypets_cont{
+  display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: unset;
+    max-height: calc(100vh - 50px);
+}
+
+.delmypet_icon{
+  position: absolute !important;
+  right: 0.5rem;
+  top: 0.5rem;
 }
 

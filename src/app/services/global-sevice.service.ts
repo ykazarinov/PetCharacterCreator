@@ -372,6 +372,16 @@ export class GlobalSeviceService {
 
   }
 
+  // считывание данных из базы на стороне клиента
+
+  allMyPets: any[] = [];
+
+  getAllMyPets(){
+    this.dbService.getAll('mypet').subscribe((peoples) => {
+    this.allMyPets = peoples.reverse();
+    });
+  }
+
 
   current_lang: any;
   currentPageButton: any;

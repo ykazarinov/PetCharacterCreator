@@ -37,14 +37,16 @@ export class PetNameComponent implements OnInit {
       if(this.globalService.languages[i].current === true){
         this.current_lang = this.globalService.languages[i];
         
-        for(let j in this.current_lang.inputs){
-          if(this.current_lang.inputs[j].page_url === this.page_url){
-            this.currentPageInput = this.current_lang.inputs[j];
-          }
-        }
+
         for(let j in this.current_lang.buttons){
           if(this.current_lang.buttons[j].page_url === this.page_url){
             this.currentPageButton = this.current_lang.buttons[j];
+          }
+        }
+
+        for(let j in this.current_lang.inputs){
+          if(this.current_lang.inputs[j].page_url === this.page_url){
+            this.currentPageInput = this.current_lang.inputs[j];
           }
         }
 

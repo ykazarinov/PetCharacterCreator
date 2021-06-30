@@ -1,0 +1,32 @@
+<div class="petbackgroundpage">
+    <app-heder-title></app-heder-title> 
+
+    <div class="row mypets_cont">
+
+        <div class="col m6 s12 bg_cont"  *ngFor="let mypet of globalService.allMyPets">
+            
+
+
+
+           
+                <div class="pet_bg_cont">
+                    <div class="image" [ngStyle]="{'background-image': 'url(' + mypet.choosed_bg_url + ')'}">
+                        <app-pet *ngFor="let my_part of mypet.my_parts" [one_part]="my_part"> 
+                        </app-pet>
+                    </div>
+                    <button class="delmypet_icon" mat-icon-button [mat-dialog-close]="true" color="basic" aria-label="Example icon button with a menu icon">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <div class="Real_name">{{mypet.name}}</div> 
+                </div>
+                
+                
+           
+
+
+
+
+
+        </div>
+    </div>
+</div>

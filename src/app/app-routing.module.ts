@@ -8,6 +8,7 @@ import { PageComponent } from './page/page.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { PetNameComponent } from './pet-name/pet-name.component';
 import { PetBackgroundPageComponent } from './pet-background-page/pet-background-page.component';
+import { MyPetsComponent } from './my-pets/my-pets.component';
 
 const routes: Routes = [
     {path: '', component: StartPageComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'constructor', component: ConstructorPageComponent},
     {path: 'name', component: PetNameComponent},
     {path: 'petbackground', component: PetBackgroundPageComponent},
+    {path: 'mypets', component: MyPetsComponent},
     {path: ':url', component: PageComponent}
     
     // {path: 'termsofuse', component: PageComponent}
