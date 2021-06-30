@@ -1,0 +1,34 @@
+<div class="petbackgroundpage">
+    <app-heder-title></app-heder-title> 
+
+
+    <!-- <div (click)='globalService.addMan()'>TEST</div> -->
+
+    <a routerLink="{{currentPageButton?.link}}" class="next_btn"  (click)='globalService.addMan()'>
+        {{currentPageButton?.title}}</a>
+
+
+
+    <div class="row">
+
+        <div class="col m6 s12 categ_cont">
+            <ul class="petbg_ul">
+            <app-petbg *ngFor="let e_bg of globalService.petBackgrounds" [e_bg] = "e_bg">
+
+            </app-petbg>
+            </ul>
+        </div>
+        <div class="col m6 s12 bg_cont"  >
+            <div class="pet_bg_cont">
+                <div class="image" [ngStyle]="{'background-image': 'url(' + this.globalService.myAnimal.choosed_bg_url + ')'}">
+                    <app-pet *ngFor="let my_part of globalService.myAnimal.my_parts" [one_part]="my_part"> 
+                    </app-pet>
+                </div>
+            </div>
+            
+            <div class="Real_name">{{globalService.myAnimal.name}}</div> 
+        </div>
+    </div>
+
+
+</div>

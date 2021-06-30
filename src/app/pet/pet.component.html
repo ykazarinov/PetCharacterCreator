@@ -1,0 +1,38 @@
+    <div #bg_color class="svg_cont layer_1" [ngStyle]="{'z-index': one_part.z_index}"
+        [innerHTML]="one_part.layer_1_code_bg | safeHtml"></div>
+
+    <div class="svg_cont layer_2"  [ngStyle]="{'z-index': one_part.z_index}"
+        [innerHTML]="one_part.layer_2_code_outline | safeHtml"></div> 
+
+    <div #white_color class="svg_cont layer_3"  [ngStyle]="{'z-index': one_part.z_index}"
+        [innerHTML]="one_part.layer_2_code_white | safeHtml"></div>
+
+    <div #spec_color class="svg_cont layer_4"  [ngStyle]="{'z-index': one_part.z_index}"
+        [innerHTML]="one_part.layer_3_code_speccol | safeHtml"></div>
+        
+    <div #glare_color class="svg_cont layer_5"  [ngStyle]="{'z-index': one_part.z_index}"
+        [innerHTML]="one_part.layer_4_code_glare | safeHtml"></div>
+
+
+
+
+
+
+
+
+
+<!-- 
+        <div #bg_color class="svg_cont layer_1" 
+        [innerHTML]="one_part.layer_1_code_bg | safeHtml" [ngStyle]="{'z-index': one_part.z_index}"></div>
+
+    <div class="svg_cont layer_2" 
+        [innerHTML]="one_part.layer_2_code_outline | safeHtml" [ngStyle]="{'z-index': one_part.z_index}"></div> 
+
+    <div #white_color class="svg_cont layer_3" 
+        [innerHTML]="one_part.layer_2_code_white | safeHtml" [ngStyle]="{'z-index': one_part.z_index}"></div>
+
+    <div #spec_color class="svg_cont layer_4" 
+        [innerHTML]="one_part.layer_3_code_speccol | safeHtml" [ngStyle]="{'z-index': one_part.z_index}"></div>
+        
+    <div #glare_color class="svg_cont layer_5" 
+        [innerHTML]="one_part.layer_4_code_glare | safeHtml" [ngStyle]="{'z-index': one_part.z_index}"></div> -->

@@ -1,0 +1,25 @@
+<li class="podcat" [class.active]="one_part.css_part_active === true" [attr.locked]="one_part.locked" 
+*ngIf="one_part.active" 
+(click)='choose_detail(); globalService.verifActivePart()'>
+<!--   cont_categ_id = {{cont_categ_id.id}}-->
+
+  <div class="lock_img_cont" *ngIf="one_part.locked">
+    <img src="../assets/img/lock.png">
+  </div>
+
+
+  <!--Прорисовка всего животного-->
+  <ng-container *ngFor="let my_non of non_svg"> 
+    <span 
+    *ngIf="one_part.categ_id != 30" 
+    [innerHTML]="my_non | safeHtml" class="svg_cont non_change_parts"></span>
+  </ng-container>
+
+  <!-- Прорисовка конкретной детали, которая выбирается, например хвост, тёмно-серого цвета -->
+  <div class="svg_cont normal_part layer_1" [innerHTML]="one_part.layer_1_code_bg | safeHtml"></div>
+  <div class="svg_cont normal_part layer_2" [innerHTML]="one_part.layer_2_code_white | safeHtml"></div>
+  <div class="svg_cont normal_part layer_3" [innerHTML]="one_part.layer_2_code_outline | safeHtml"></div>
+  <div class="svg_cont normal_part layer_4" [innerHTML]="one_part.layer_3_code_speccol | safeHtml"></div>
+  <div class="svg_cont normal_part layer_5" [innerHTML]="one_part.layer_4_code_glare | safeHtml"></div>
+</li>
+

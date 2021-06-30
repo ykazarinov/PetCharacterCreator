@@ -1,7 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {StartPageComponent} from './start-page/start-page.component';
+import {AnimalsPageComponent} from './animals-page/animals-page.component';
+import {GenderPageComponent} from './gender-page/gender-page.component';
+import {ConstructorPageComponent} from './constructor-page/constructor-page.component';
+import { PageComponent } from './page/page.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
+import { PetNameComponent } from './pet-name/pet-name.component';
+import { PetBackgroundPageComponent } from './pet-background-page/pet-background-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+    {path: '', component: StartPageComponent},
+    {path: 'animals', component: AnimalsPageComponent},
+    {path: 'genders', component: GenderPageComponent},
+    {path: 'constructor', component: ConstructorPageComponent},
+    {path: 'name', component: PetNameComponent},
+    {path: 'petbackground', component: PetBackgroundPageComponent},
+    {path: ':url', component: PageComponent}
+    
+    // {path: 'termsofuse', component: PageComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

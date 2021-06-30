@@ -1,0 +1,18 @@
+
+
+  <div class="container">
+    <div class="row bot_margin_del">
+      <ng-container *ngFor="let color of globalService.colors; let i = index">
+        <ng-container *ngIf="color.hue_id === colors_hue.id && color.luminosity_id === colors_luminosity.id">
+          <div class="col s3 m2 l3">
+            <app-color [color]='color'>
+
+            </app-color>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+        
+     

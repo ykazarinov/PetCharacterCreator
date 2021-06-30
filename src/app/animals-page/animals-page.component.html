@@ -1,0 +1,23 @@
+<app-heder-title></app-heder-title>
+
+<div *ngIf="loading" id="loadingDiv">
+  <img src="assets/img/loader.gif">
+</div>
+<div id="animals">
+  <div class="container-fluid animals_page">
+    <div class="row animals_cont">
+      <div *ngFor="let animal of globalService.animals">
+        
+        <div *ngIf="animal.active === 1" class="animal_cont col s6 m4">
+          
+
+          <a routerLink="/genders"  (click)="transferAnimalId(animal.id)">
+            <img src="{{animal.image}}">
+
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

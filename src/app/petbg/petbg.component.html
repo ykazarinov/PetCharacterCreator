@@ -1,0 +1,7 @@
+<li class="pet_bg_btn" 
+    [attr.locked]="e_bg.locked" 
+    *ngIf="e_bg.active"
+    [class.active]="e_bg.css_bg_active" 
+(click)='choose_bg();'>
+<img src="{{e_bg.image}}">
+</li>

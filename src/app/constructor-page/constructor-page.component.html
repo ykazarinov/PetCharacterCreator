@@ -1,0 +1,73 @@
+<app-heder-title></app-heder-title>
+<a routerLink="{{currentPageButton?.link}}" class="next_btn">{{currentPageButton?.title}}</a> 
+
+<div *ngIf="loading" id="loadingDiv">
+  <img src="assets/img/loader.gif"> 
+</div>
+<div id="animal" class="animal_allpage">
+  <div class=" animal_page">
+    <div class="container-fluid">
+      <div class="row">
+
+        <div class="col m2 s12 categ_cont">
+          <ul class="tablist-left categ_tabs">
+          
+
+            <button class="bodyColorBtn" mat-button (click)="openDialog(); body_color()">
+              <img src="{{globalService.color_icons[0]}}">
+            </button>
+
+            <!-- <a class=" modal-trigger bodyColorBtn" href="#modal1" (click)="bodyColorClick()"> 
+              <img src="{{globalService.color_icons[0]}}">
+              
+            </a> -->
+            
+            
+
+
+
+            <app-parts-category *ngFor="let categ of globalService.categories" [one_category]="categ">
+            </app-parts-category> 
+          </ul> 
+
+          <div id="modal1" #modal class="modal">    
+            <app-col-win></app-col-win>
+          </div>
+        </div>
+        <div class="col m4 s12 parts_groups_cont">
+          
+          
+
+
+
+          <ul class="part_cont"  *ngFor="let categ2 of globalService.categories"  [class.hide]="!categ2.css_categ_active"> 
+           
+          <button class="podcat" mat-button (click)="openDialog(); main_color(categ2.id)" 
+          [class.disabled] = "!globalService.main_color_btn_active">
+            <img src="{{globalService.color_icons[1]}}">
+          </button>
+
+          <button class="podcat" mat-button 
+          [class.disabled] = "!globalService.spec_color_btn_active"
+          (click)="openDialog(); spec_color(categ2.id)" 
+          >
+            <img src="{{globalService.color_icons[2]}}">
+          </button>
+           
+            <ng-container *ngFor="let part of globalService.parts">
+              <app-part  *ngIf="part.categ_id === categ2.id" [one_part]="part">
+              </app-part> 
+            </ng-container>
+          </ul>
+        </div>
+        <div class="col m6 s12 image">
+        
+            <app-pet *ngFor="let my_part of globalService.myAnimal.my_parts" [one_part]="my_part"> 
+            </app-pet>
+        
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<ng-container *ngIf="one_category.changeable">
+<li [class.active]="one_category.css_categ_active">
+  <a (click)="onCategClick()">
+    <img src="{{one_category.image}}">
+  </a>
+</li>
+</ng-container> 

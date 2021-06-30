@@ -1,0 +1,54 @@
+$black: #000000;
+
+#genders{
+  color: $black;
+    display:flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    justify-content: center;
+   .genders_page{
+       display: flex;
+       align-self: stretch;
+       
+            .genders_cont{
+                display: flex;
+                justify-content: center;
+                
+
+
+            .gender_cont{
+                //     background-image: url('../img/frame.png');
+                // background-repeat: no-repeat;
+                // background-size: contain;
+                // background-position: center;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                    padding: 1.5rem;
+                a{
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        // object-fit: cover;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media screen and (orientation: landscape){
+            .genders_cont{
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+        }
+        @media screen and (orientation: portrait){
+            .genders_cont{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+   }
+}

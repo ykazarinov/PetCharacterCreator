@@ -1,0 +1,39 @@
+$grey: #696969;
+.mat-form-field{
+    width: 100%;
+}
+
+// @font-face {
+//     font-family: 'Ranchers';
+//     // src: url(/assets/fonts/Ranchers/Ranchers-Regular.ttf) format("truetype");
+//     src: url(/assets/fonts/Gabriela/Gabriela-Regular.ttf) format("truetype");
+//   }
+
+.label{
+    font-family: 'PTSansNarrowBold', cursive !important;
+    line-height: 3.8rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.input{
+    font-family: 'PTSansNarrowBold', cursive !important;
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    // border: solid 1px $gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .5);
+    border: none !important;
+}
+
+.mat-form-field{
+    font-size: 1.5rem !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix{
+padding: 0 !important;
+}
+
+
+
+
