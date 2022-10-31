@@ -53,7 +53,7 @@ export interface Category{
   spec_color_default: string
   spec_color_default_id: number
   subjoin: boolean
-  z_index: number
+  z_index?: number
   css_categ_active?: boolean
 }
 
@@ -174,7 +174,9 @@ export interface PetBackground{
 })
 export class GlobalSeviceService {
 
-  server_url: string = 'http://localhost:8000/';
+  server_url: string = process.env.server_url
+  // server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page'
+  // server_url: string = 'http://localhost:8000/';
   server_media_url: string = 'storage/';
 
   headerisVisible = false;
@@ -379,6 +381,7 @@ export class GlobalSeviceService {
   getAllMyPets(){
     this.dbService.getAll('mypet').subscribe((peoples) => {
     this.allMyPets = peoples.reverse();
+    
     });
   }
 
@@ -399,6 +402,31 @@ export class GlobalSeviceService {
       }
     }
     return this.currentPageButton;
+  }
+
+  delResult : boolean = false;
+  // del_pet_id: number;
+
+  dialogResult(result){
+    this.delResult = false;
+    if(result === true){
+      //return true;
+      this.delResult = true;
+      console.log('this.delResult:', this.delResult);
+      
+      
+    }
+   
+  }
+
+  deletePet(){
+    // if (this.delResult === true){
+    //   this.dbService.deleteByKey('mypet', del_pet_id).subscribe((status) => {
+    //   console.log('Deleted?:', status);
+    // });
+    //  console.log('del');
+    // }
+    
   }
 
 

@@ -41,6 +41,9 @@ import { PetbgComponent } from './petbg/petbg.component';
 
 import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
 import { MyPetsComponent } from './my-pets/my-pets.component';
+import { DialogWinComponent } from './dialog-win/dialog-win.component';
+import { DeletedPetComponent } from './deleted-pet/deleted-pet.component';
+
 
 // Ahead of time compiles requires an exported function for factories
 export function migrationFactory() {
@@ -115,7 +118,9 @@ const dbConfig: DBConfig  = {
     PetNameComponent,
     PetBackgroundPageComponent,
     PetbgComponent,
-    MyPetsComponent
+    MyPetsComponent,
+    DialogWinComponent,
+    DeletedPetComponent
   ],
   imports: [
     BrowserModule,

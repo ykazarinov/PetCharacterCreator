@@ -13,25 +13,21 @@
           <ul class="tablist-left categ_tabs">
           
 
-            <button class="bodyColorBtn" mat-button (click)="openDialog(); body_color()">
-              <img src="{{globalService.color_icons[0]}}">
+            <button class="bodyColorBtn" mat-button (click)="openDialog(); body_color()"> 
+              <img src="{{globalService.color_icons[0]}}"> 
             </button>
 
             <!-- <a class=" modal-trigger bodyColorBtn" href="#modal1" (click)="bodyColorClick()"> 
               <img src="{{globalService.color_icons[0]}}">
               
             </a> -->
-            
-            
-
-
-
+     
             <app-parts-category *ngFor="let categ of globalService.categories" [one_category]="categ">
             </app-parts-category> 
-          </ul> 
+          </ul>  
 
           <div id="modal1" #modal class="modal">    
-            <app-col-win></app-col-win>
+            <app-dialog-win></app-dialog-win>
           </div>
         </div>
         <div class="col m4 s12 parts_groups_cont">

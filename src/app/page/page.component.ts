@@ -1,4 +1,4 @@
-import { Route } from '@angular/compiler/src/core';
+import { Route } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';

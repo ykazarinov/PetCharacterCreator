@@ -9,6 +9,8 @@ import {GlobalSeviceService, Part} from '../services/global-sevice.service';
 })
 export class PetComponent implements OnInit { 
 
+  @Input() my_part: Part;
+  @Input() mypet: any;
   @Input() one_part: Part;
 
   @ViewChild("bg_color", {static: false})   
@@ -24,11 +26,15 @@ export class PetComponent implements OnInit {
   glare_color: ElementRef;
  
 
-  constructor(  public globalService: GlobalSeviceService) { 
+  constructor(  public globalService: GlobalSeviceService
+    
+    
+    ) { 
+      // myAnimal = globalService.myAnimal
   }
 
   ngOnInit(): void {
-
+   
     
   } 
 
@@ -38,11 +44,14 @@ export class PetComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    
+    // console.log('(3this.my_part', this.one_part)
+    // console.log('bg_color', this.bg_color)
+    this.colorize();
   }
 
   ngAfterViewChecked(){
-    this.colorize();
+    
+   
   }
 
 
@@ -72,6 +81,8 @@ export class PetComponent implements OnInit {
         }
       }
   }
+
+
 
 
 }

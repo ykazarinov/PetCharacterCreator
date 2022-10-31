@@ -1,0 +1,43 @@
+.dialog_bot{
+    
+    background-image: url("/assets/img/lang_btn.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 69px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: 'PTSansNarrowRegular', cursive !important;
+
+}
+
+.dialog_win_header{
+    position: relative;
+    background-image: url(/assets/img/header_bg.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-position: bottom;
+    background-color: unset;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: .7rem;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    h1{
+        font-family: "Ranchers", cursive;
+        font-size: 1.7rem !important;
+        color: #000000;
+        opacity: 0.5;
+        position: unset;
+        margin: unset;
+        left: unset;
+        transform: unset;
+        padding-left: 1rem;
+    }
+
+}

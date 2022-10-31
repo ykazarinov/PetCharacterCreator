@@ -3,30 +3,22 @@
 
     <div class="row mypets_cont">
 
-        <div class="col m6 s12 bg_cont"  *ngFor="let mypet of globalService.allMyPets">
+        
             
 
 
+            <app-deleted-pet  *ngFor="let mypet of globalService.allMyPets"  [mypet]="mypet">
 
-           
-                <div class="pet_bg_cont">
-                    <div class="image" [ngStyle]="{'background-image': 'url(' + mypet.choosed_bg_url + ')'}">
-                        <app-pet *ngFor="let my_part of mypet.my_parts" [one_part]="my_part"> 
-                        </app-pet>
-                    </div>
-                    <button class="delmypet_icon" mat-icon-button [mat-dialog-close]="true" color="basic" aria-label="Example icon button with a menu icon">
-                        <mat-icon>close</mat-icon>
-                    </button>
-                    <div class="Real_name">{{mypet.name}}</div> 
-                </div>
-                
-                
+            </app-deleted-pet>
            
 
 
 
-
-
-        </div>
+        
     </div>
 </div>
+
+
+<!-- <div id="modal1" #modal class="modal">    
+    <app-col-win></app-col-win>
+  </div> -->

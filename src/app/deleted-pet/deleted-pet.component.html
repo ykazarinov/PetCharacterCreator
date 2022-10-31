@@ -1,0 +1,19 @@
+<div class="col m6 s12 bg_cont">
+    <div class="pet_bg_cont">
+        <div class="image" [ngStyle]="{'background-image': 'url(' + mypet.choosed_bg_url + ')'}">
+            <app-pet *ngFor="let my_part of mypet.my_parts" [my_part]="my_part" [mypet]="mypet" class="app_list_pet"> 
+            </app-pet>
+            
+        </div>
+        <button class="delmypet_icon" mat-icon-button 
+            
+            color="basic" 
+            aria-label="Example icon button with a menu icon"
+            (click)="openDialog(); get_del_pet_id()">
+            <mat-icon>close</mat-icon>
+        </button>
+
+        <div class="Real_name">{{mypet.name}}</div> 
+        <!-- <div class="Real_name">{{mypet.choosed_bg_url}}</div>  -->
+    </div>
+</div>
