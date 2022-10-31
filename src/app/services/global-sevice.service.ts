@@ -177,7 +177,7 @@ export class GlobalSeviceService {
   // server_url: string = process.env.server_url || 'http://localhost:8000/' || 'https://serene-pasteur.82-165-57-61.plesk.page/';
   server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page/'
   // server_url: string = 'http://localhost:8000/';
-  server_media_url: string = 'storage/';
+  server_media_url: string = '../storage/app/public/';
 
   headerisVisible = false;
   app_title_1: string = "Pet\'s";
