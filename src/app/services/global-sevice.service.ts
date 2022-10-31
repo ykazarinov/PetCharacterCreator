@@ -174,8 +174,8 @@ export interface PetBackground{
 })
 export class GlobalSeviceService {
 
-  server_url: string = process.env.SERVER_URL;
-  // server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page/'
+  server_url1: string = process.env.SERVER_URL;
+  server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page/'
   // server_url: string = 'http://localhost:8000/';
   server_media_url: string = 'storage/';
 
@@ -270,6 +270,7 @@ export class GlobalSeviceService {
     }
 
   loadCategoriesAndParts(anim_id, gender_id): Observable<Category>{
+    console.log(this.server_url1)
     return this.http.get<Category>(this.server_url + 'constructor_page?anim_id=' + anim_id
     + "&gender_id=" + gender_id);
 
@@ -340,13 +341,14 @@ export class GlobalSeviceService {
 
 
   getTranslate(locale): Observable<Language>{
-    
+      console.log(this.server_url1)
       return this.http.get<Language>(this.server_url + 'get_lang?locale=' + locale);
     
    
   }
 
   loadPetBackgrounds(): Observable<PetBackground>{
+    console.log(this.server_url1)
     return this.http.get<PetBackground>(this.server_url + 'get_petBackgrounds');
 
     
