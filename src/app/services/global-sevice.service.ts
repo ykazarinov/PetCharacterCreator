@@ -174,9 +174,9 @@ export interface PetBackground{
 })
 export class GlobalSeviceService {
 
-  // server_url: string = process.env.server_url || 'http://localhost:8000/' || 'https://serene-pasteur.82-165-57-61.plesk.page/';
-  server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page/'
-  // server_url: string = 'http://localhost:8000/';
+  server_url: string = process.env.server_url;
+  // server_url: string = 'https://serene-pasteur.82-165-57-61.plesk.page/'
+  // server_url: string = process.env.server_url;
   server_media_url: string = '../storage/app/public/';
 
   headerisVisible = false;
