@@ -14,5 +14,7 @@ Demo: https://petcharactercreator.vercel.app/
 ## Used technologies
 
 FrontEnd: Angular 2 / SCSS / Bootstrap
+
 BackEnd: Laravel / Voyager (https://github.com/ykazarinov/PetCharacterCreator-server)
+
 Hosting: ionos.fr / vercel.com
