@@ -1,27 +1,18 @@
-# Application
+# Pet Character Creator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+Hello!
+My name is Flocky Walker.
+My father is a German shepherd and my mother is a she-wolf.
+I have 4 best friends. My sister Rinna is a brave Chihuahua.
+Shick is a cute spotted cat with different eyes.
+Brondar is a cheerful and naive doggie.
+Rocky is a fast and brave dog who will always come to the rescue.
+Due to popular demand from my YouTube subscribers, our team has developed the PetCharacterCreator app. Here you can have a good time creating your pets. Hope you like it. Forward!
 
-## Development server
+Demo: https://petcharactercreator.vercel.app/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Used technologies
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+FrontEnd: Angular 2 / SCSS / Bootstrap
+BackEnd: Laravel / Voyager (https://github.com/ykazarinov/PetCharacterCreator-server)
+Hosting: ionos.fr / vercel.com
